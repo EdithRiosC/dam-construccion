@@ -61,5 +61,63 @@ dam-construccion/
 
 ## Despliegue
 
-- **Frontend:** GitHub Pages - https://edithriosc.github.io/dam-construccion/
-- **Backend:** Railway - https://railway.app
+### Frontend - GitHub Pages
+
+1. Ve a https://github.com/EdithRiosC/dam-construccion
+2. Settings → Pages → Source: "Deploy from a branch"
+3. Branch: "main", Folder: "/ (root)" → Save
+
+URL: https://edithriosc.github.io/dam-construccion/
+
+### Backend - Render (Recomendado)
+
+1. Ve a https://render.com y crea una cuenta con GitHub
+2. Haz clic en "New +" → "Web Service"
+3. Conecta el repositorio "EdithRiosC/dam-construccion"
+4. Configura:
+   - Name: dam-construccion-backend
+   - Root Directory: backend
+   - Runtime: Node
+   - Build Command: npm install
+   - Start Command: node server.js
+5. En "Environment Variables" agrega:
+
+| Key                | Value                      |
+|--------------------|----------------------------|
+| EMAIL_USER         | nena2nena14@gmail.com      |
+| EMAIL_PASS         | (contraseña de aplicacion) |
+| EMAIL_DESTINO      | nena2nena14@gmail.com      |
+| SMTP_HOST          | smtp.gmail.com             |
+| SMTP_PORT          | 587                        |
+| SMTP_SECURE        | false                      |
+
+6. Haz clic en "Create Web Service"
+
+### Backend - Railway (Alternativa)
+
+1. Ve a https://railway.app y crea una cuenta con GitHub
+2. Haz clic en "New Project" → "Deploy from GitHub Repo"
+3. Selecciona el repositorio "EdithRiosC/dam-construccion"
+4. En Variables agrega las mismas variables de entorno que Render
+5. En Settings → Networking → Generate Domain para obtener la URL
+
+### Backend local con PM2 (produccion local)
+
+```bash
+npm install -g pm2
+cd backend
+pm2 start server.js --name dam-backend
+pm2 save
+pm2 startup
+```
+
+Comandos PM2:
+- pm2 status → ver estado
+- pm2 logs dam-backend → ver logs
+- pm2 restart dam-backend → reiniciar
+- pm2 stop dam-backend → detener
+
+## URLs de produccion
+
+- Frontend: https://edithriosc.github.io/dam-construccion/
+- Backend: (URL de Render o Railway)
