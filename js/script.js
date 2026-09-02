@@ -5,6 +5,22 @@
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
 
+const header = document.querySelector(".header");
+
+if (header) {
+
+    const actualizarHeader = function () {
+
+        header.classList.toggle("scrolled", window.scrollY > 24);
+
+    };
+
+    window.addEventListener("scroll", actualizarHeader, { passive: true });
+
+    actualizarHeader();
+
+}
+
 if (menuBtn && nav) {
 
     menuBtn.addEventListener("click", function () {
