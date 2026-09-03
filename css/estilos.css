@@ -2749,9 +2749,17 @@ a {
 
 .projects-intro {
 
-    display: block;
+    display: flex;
 
-    max-width: 790px;
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 90px;
+
+    width: 100%;
+
+    max-width: none;
 
     margin-bottom: 58px;
 
@@ -2768,6 +2776,14 @@ a {
     font-size: 14px;
 
     line-height: 1.65;
+
+}
+
+.projects-intro-button {
+
+    flex: 0 0 auto;
+
+    margin-bottom: 2px;
 
 }
 
