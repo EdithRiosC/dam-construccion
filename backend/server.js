@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 
     res.json({
         ok: true,
-        mensaje: "Servidor de D.A.M Construcción activo"
+        mensaje: "Servidor de D.A.M. Construcción activo"
     });
 
 });
@@ -136,7 +136,7 @@ app.post("/api/contacto", async (req, res) => {
             replyTo: email,
 
             subject:
-                `Nueva solicitud de servicio - D.A.M Construcción`,
+                `Nueva solicitud de servicio - D.A.M. Construcción`,
 
             html: `
 
@@ -159,7 +159,7 @@ app.post("/api/contacto", async (req, res) => {
                             margin: 0;
                             color: #f5a900;
                         ">
-                            D.A.M Construcción
+                            D.A.M. Construcción
                         </h1>
 
                         <p>
@@ -228,7 +228,7 @@ app.post("/api/contacto", async (req, res) => {
                         text-align: center;
                     ">
 
-                        D.A.M Construcción © 2026
+                        D.A.M. Construcción © 2026
 
                     </div>
 
@@ -296,7 +296,7 @@ app.listen(PORT, () => {
 
     console.log("");
     console.log("====================================");
-    console.log("🏗️  D.A.M CONSTRUCCIÓN");
+    console.log("🏗️  D.A.M. CONSTRUCCIÓN");
     console.log("====================================");
 
     console.log(

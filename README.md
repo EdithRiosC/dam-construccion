@@ -1,6 +1,6 @@
-# D.A.M Construccion
+# D.A.M. Construccion
 
-Sitio web corporativo de la empresa D.A.M Construccion.
+Sitio web corporativo de la empresa D.A.M. Construccion.
 
 ## Requisitos previos
 

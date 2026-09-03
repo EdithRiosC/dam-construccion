@@ -7,6 +7,72 @@ const nav = document.getElementById("nav");
 
 const header = document.querySelector(".header");
 
+const presentationSection = document.querySelector(".presentation-section");
+
+if (presentationSection && "IntersectionObserver" in window) {
+
+    const presentationObserver = new IntersectionObserver(function (entries, observer) {
+
+        entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+                presentationSection.classList.add("is-visible");
+
+                observer.unobserve(presentationSection);
+
+            }
+
+        });
+
+    }, { threshold: 0.2 });
+
+    presentationObserver.observe(presentationSection);
+
+} else if (presentationSection) {
+
+    presentationSection.classList.add("is-visible");
+
+}
+
+const introGallery = document.getElementById("introGallery");
+
+const galleryPrevious = document.querySelector(".gallery-control-prev");
+
+const galleryNext = document.querySelector(".gallery-control-next");
+
+if (introGallery && galleryPrevious && galleryNext) {
+
+    const moveGallery = function (direction) {
+
+        const galleryItem = introGallery.querySelector(".intro-gallery-item");
+
+        if (!galleryItem) {
+            return;
+        }
+
+        const galleryGap = 18;
+
+        const movement = (galleryItem.offsetWidth + galleryGap) * direction;
+
+        introGallery.scrollBy({ left: movement, behavior: "smooth" });
+
+    };
+
+    galleryPrevious.addEventListener("click", function () {
+
+        moveGallery(-1);
+
+    });
+
+    galleryNext.addEventListener("click", function () {
+
+        moveGallery(1);
+
+    });
+
+}
+
 if (header) {
 
     const actualizarHeader = function () {
